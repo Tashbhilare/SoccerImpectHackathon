@@ -42,23 +42,6 @@ Open `getting-started.ipynb` to see examples of:
 └── requirements.txt         # Python dependencies (if using pip)
 ```
 
-## Setting up your virtual environment (if using)
-
-### For conda:
-
-```bash
-conda env create -f environment.yml
-conda activate soccer-hackathon # to activate your virtual environment
-```
-
-### For pip:
-
-```bash
-python -m venv venv
-source venv/bin/activate # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
-
 ## Deliverables (Due Friday, February 27, 2026)
 
 1. **Slide deck** (PDF, max 8 slides) with clear visualizations
@@ -84,18 +67,6 @@ pip install -r requirements.txt
 - **R:** tidyverse, igraph
 - Any language is acceptable as long as your work is reproducible
 
-## Recommended Project Structure
-
-your-team-name/
-├── notebooks/          # Jupyter notebooks for exploration
-├── src/               # Python scripts/modules
-├── figures/           # Generated plots and visualizations
-├── slides/            # Your presentation deck
-├── data/              # Processed data (not raw IMPECT data)
-├── README.md          # Describe your approach
-├── requirements.txt   # Your dependencies
-└── LICENSE            # Open-source license
-
 ## Resources
 
 - [Kloppy Documentation](https://kloppy.pysport.org/)
@@ -120,18 +91,6 @@ your-team-name/
 - Communication & visualization (15 pts)
 - Reproducibility & ethics (15 pts)
 
-## Submission Checklist
-
-Before submitting, ensure you have:
-- [ ] Chosen one prompt (A or B)
-- [ ] Created slide deck (PDF, max 8 slides)
-- [ ] Pushed code to GitHub with clear README
-- [ ] Included environment.yml or requirements.txt
-- [ ] Added open-source license (MIT or Apache 2.0)
-- [ ] Documented any AI tool usage
-- [ ] Named files: `TeamName_Hackathon2026.pdf`
-- [ ] Tested that code runs from a fresh environment
-
 ## Contact
 
 Questions? Email **northeasternsportsanalytics@gmail.com**
@@ -139,3 +98,6 @@ Questions? Email **northeasternsportsanalytics@gmail.com**
 ---
 
 **Good luck and happy hacking!** ⚽📊
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
