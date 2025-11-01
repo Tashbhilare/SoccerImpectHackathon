@@ -42,6 +42,21 @@ Open `getting-started.ipynb` to see examples of:
 └── requirements.txt         # Python dependencies (if using pip)
 ```
 
+## For conda:
+
+```bash
+conda env create -f environment.yml
+conda activate soccer-hackathon # to activate your virtual environment
+```
+
+## For pip:
+
+```bash
+python -m venv venv
+source venv/bin/activate # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
 ## Deliverables (Due Friday, February 27, 2026)
 
 1. **Slide deck** (PDF, max 8 slides) with clear visualizations
