@@ -46,10 +46,11 @@ IMPECT Open Data - German Bundesliga 2023/24 season (306 matches)
 
 3. **Create requirements.txt:**
 ```
-- kloppy>=3.18.0
-- polars>=0.20.0
-- pandas>=2.0.0
-- numpy>=1.24.0
-- scikit-learn>=1.3.0
-- matplotlib>=3.7.0
-- requests>=2.31.0
+kloppy>=3.18.0
+polars>=1.0.0
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+requests>=2.31.0
+tqdm>=4.66.0
