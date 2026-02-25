@@ -1,7 +1,7 @@
 # Bundesliga Player Valuation System
 ## Soccer Data Analytics Hackathon 2026
 
-**Team:** The False Nines  
+**Team:** Four Four Two  
 **Members:** Tanish Bhilare & Mohit Sharma  
 **Prompt:** (B) Build a Transparent Player Valuation Metric
 
@@ -29,10 +29,10 @@ Building a transparent, interpretable player valuation metric using IMPECT Open 
 - **Analysis:** scikit-learn (scaling), scipy (statistics)
 
 ### Reproducibility
-- ✅ Complete code on GitHub with clear documentation
-- ✅ Environment file (`requirements.txt`) for dependency management
-- ✅ Open-source license (MIT License)
-- ✅ Cached intermediate results for efficient re-running
+- Complete code on GitHub with clear documentation
+- Environment file (`requirements.txt`) for dependency management
+- Open-source license (MIT License)
+- Cached intermediate results for efficient re-running
 
 ---
 
@@ -143,6 +143,31 @@ Building a transparent, interpretable player valuation metric using IMPECT Open 
 
 ---
 
+## Visualizations
+
+### Validation Results
+
+Our metrics show strong correlation with actual performance:
+
+![Validation Correlations](figures/validation_correlations.png)
+*Left: Finishing rating vs actual goals (r=0.857). Right: Chance creation vs actual assists (r=0.829)*
+
+### Top 20 Players
+
+Position-balanced identification of elite performers:
+
+![Top 20 Players](figures/top20_overall_rating.png)
+*Top 20 players by overall rating, color-coded by position (Red=Forward, Blue=Midfielder, Green=Defender)*
+
+### Case Study: Florian Wirtz
+
+Multi-dimensional performance profile:
+
+![Florian Wirtz Radar](figures/radar_Florian_Wirtz.png)
+*Florian Wirtz's performance across 4 key forward metrics, showing elite finishing and chance creation*
+
+---
+
 ## Repository Structure
 
 ```
@@ -241,16 +266,16 @@ jupyter notebook 5_Visualizations.ipynb
 
 ### Statistical Validation
 
-✅ **Strong correlation with ground truth performance:**
+**Strong correlation with ground truth performance:**
 - Finishing metric vs Actual Goals: **r = 0.857** (p < 0.001, n=87 forwards)
 - Chance Creation vs Actual Assists: **r = 0.829** (p < 0.001, n=294 players)
 - Both exceed r > 0.80 threshold for strong predictive validity
 
-✅ **Domain expert alignment:**
+**Domain expert alignment:**
 - 100% of known elite players (Kane, Wirtz, Kimmich, Xhaka, Schlotterbeck) rate highly in expected metrics
 - Top performers in each metric make soccer sense (top finisher is a forward, top ball winner is a defender)
 
-✅ **Position balance:**
+**Position balance:**
 - Without position weighting: Top 20 has 18 defenders, 2 forwards (systemic bias)
 - With position weighting: Top 20 balanced across all positions
 - Within-position percentiles enable fair cross-position comparison
@@ -301,24 +326,24 @@ tqdm>=4.66.0            # Progress bars
 ## Deliverables
 
 ### Analysis & Metrics
-- ✅ Event processing pipeline (962,990 events across 306 matches)
-- ✅ 8-metric transparent rating system with documented weights
-- ✅ 402 player ratings with position-specific evaluation
-- ✅ Ground truth validation (r > 0.82 for key metrics)
-- ✅ Market value integration for 301 players (74.9% coverage)
+- Event processing pipeline (962,990 events across 306 matches)
+- 8-metric transparent rating system with documented weights
+- 402 player ratings with position-specific evaluation
+- Ground truth validation (r > 0.82 for key metrics)
+- Market value integration for 301 players (74.9% coverage)
 
 ### Visualizations
-- ✅ Validation scatter plots (finishing vs goals, chance creation vs assists)
-- ✅ Top 20 players bar chart (position color-coded)
-- ✅ Radar charts for top performers (case study visuals)
-- ✅ Position comparison visualizations
-- ✅ All figures saved at 300 DPI for presentation quality
+- Validation scatter plots (finishing vs goals, chance creation vs assists)
+- Top 20 players bar chart (position color-coded)
+- Radar charts for top performers (case study visuals)
+- Position comparison visualizations
+- All figures saved at 300 DPI for presentation quality
 
 ### Documentation
-- ✅ Comprehensive README with methodology and results
-- ✅ Jupyter notebooks with markdown explanations
-- ✅ Reproducible pipeline with environment specifications
-- ✅ Clear installation and execution instructions
+- Comprehensive README with methodology and results
+- Jupyter notebooks with markdown explanations
+- Reproducible pipeline with environment specifications
+- Clear installation and execution instructions
 
 ---
 
@@ -380,14 +405,6 @@ Soccer Data Analytics Hackathon, Northeastern University.
 
 ---
 
-## Contact
-
-For questions about this project:
-- **GitHub Issues:** [SoccerImpectHackathon/issues](https://github.com/Tashbhilare/SoccerImpectHackathon/issues)
-- **Email:** northeasternsportsanalytics@gmail.com (hackathon organizers)
-
----
-
 ## Quick Start Guide
 
 **Want to see the results without running everything?**
@@ -399,9 +416,9 @@ For questions about this project:
 **Want to reproduce the full analysis?**
 
 1. Install dependencies: `pip install -r requirements.txt`
-2. Run `1_Data_Loading.ipynb` (15-20 min first time, then cached)
-3. Run `4_Market_Value_Analysis.ipynb` (5-10 min)
-4. Run `5_Visualizations.ipynb` (2-3 min)
+2. Run `1_Data_Loading.ipynb` (Takes longer to run for the first time, then cached)
+3. Run `4_Market_Value_Analysis.ipynb`
+4. Run `5_Visualizations.ipynb` 
 5. All results saved to `data/processed/` and `figures/`
 
 **Want to explore alternative approaches?**
@@ -411,4 +428,3 @@ For questions about this project:
 
 ---
 
-*Last Updated: February 2026*
