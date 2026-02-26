@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 Northeastern University Sports Analytics
+Copyright (c) 2026 Tanish Bhilare & Mohit Sharma
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+DATA LICENSE NOTICE:
+
+This project uses IMPECT Open Data, which is subject to the IMPECT Open Data License.
+The IMPECT data is licensed for non-commercial use only.
+
+IMPECT Open Data License: https://github.com/ImpectAPI/open-data/blob/main/LICENSE.pdf
+
+Users of this software must comply with both the MIT License (for the code) and 
+the IMPECT Open Data License (for the data).
