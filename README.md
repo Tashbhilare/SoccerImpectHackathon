@@ -159,42 +159,83 @@ Position-balanced identification of elite performers:
 ![Top 20 Players](figures/top20_overall_rating.png)
 *Top 20 players by overall rating, color-coded by position (Red=Forward, Blue=Midfielder, Green=Defender)*
 
-### Case Study: Florian Wirtz
+### Validation
 
-Multi-dimensional performance profile:
+**Predictive validity (Guirassy transfer):**
 
-![Florian Wirtz Radar](figures/radar_Florian_Wirtz.png)
-*Florian Wirtz's performance across 4 key forward metrics, showing elite finishing and chance creation*
+Serhou Guirassy was rated 86.7 in our 2023/24 analysis — flagged as a value target at a market value of €30M. Borussia Dortmund signed him for €18M. His value subsequently rose to €40–45M. The system identified the undervaluation before the market corrected.
+
+**Pipeline consistency (internal correlation):**
+
+- Finishing rating vs actual goals: r = 0.857 (p < 0.001, n = 87 forwards)
+- Chance creation vs actual assists: r = 0.829 (p < 0.001, n = 294 players)
+
+Note: these correlations are not independent — metrics are derived from the same events. They confirm the pipeline's mathematical correctness (aggregation, normalization, and scaling introduce no distortion), not that the design is optimal.
+
+**Face validity:**
+
+All 7 known elite players checked against their publicly known primary strength rank above the 85th percentile in that metric. Harry Kane: 99.0 finishing. Florian Wirtz: 93.3 chance creation. Joshua Kimmich: 97.6 ball progression. Nico Schlotterbeck: 94.1 ball winning.
+
+### Top Performers
+
+**Forwards (within-position):**
+
+1. Florian Wirtz — 100.0
+2. Jonas Hofmann — 86.9
+3. Xavi Simons — 84.5
+4. Leroy Sané — 80.5
+5. Andrej Kramaric — 79.4
+
+**Midfielders (within-position):**
+
+1. Granit Xhaka — 100.0
+2. Angelo Stiller — 89.1
+3. Joshua Kimmich — 86.8
+4. Exequiel Palacios — 85.3
+5. Edmond Tapsoba — 84.0
+
+**Defenders (within-position):**
+
+1. Min-jae Kim — 100.0
+2. Nico Schlotterbeck — 94.0
+3. Timo Hübers — 92.6
+4. Willian Pacho — 89.9
+5. Waldemar Anton — 89.9
 
 ---
+---
 
-## Repository Structure
+# Repository Structure
 
 ```
 SoccerImpectHackathon/
 ├── data/
-│   ├── market_values.csv                 # Player market valuations (Transfermarkt)
-│   ├── processed/                        # Cached intermediate data
-│   │   ├── all_matches_with_zones.parquet        # 962K events with team-aware zones
-│   │   ├── player_ratings_final.parquet          # 3-metric system (exploratory)
-│   │   ├── player_ratings_FINAL_with_market_values.parquet  # 8-metric final system
-│   │   └── validation_results.csv                # Correlation test results
-│   └── raw/                              # (IMPECT data auto-downloaded)
-├── figures/                              # Generated visualizations
-│   ├── validation_correlations.png       # Scatter plots (r=0.857, r=0.829)
-│   ├── top20_overall_rating.png          # Bar chart of top 20 players
-│   ├── radar_Florian_Wirtz.png          # Case study radar chart
-│   └── ...                               # Additional visualizations
+│   ├── market_values.csv                         # Transfermarkt values (June 2024)
+│   └── processed/
+│       ├── all_matches_with_zones.parquet         # 962K events with pitch zones
+│       ├── all_events_with_points.parquet         # Events with metric point scores
+│       ├── player_metadata.parquet                # player_id to team_id mapping
+│       ├── squads_metadata.parquet                # team_id to team_name mapping
+│       ├── matches_metadata.parquet               # Match schedule data
+│       └── player_ratings_FINAL_with_market_values.parquet  # 395 players, 54 columns
+├── figures/
+│   ├── validation_guirassy_timeline.png
+│   ├── validation_face_validity.png
+│   ├── validation_correlation_compact.png
+│   ├── role_classification_visual.png
+│   ├── weight_distribution.png
+│   └── ...
 ├── notebooks/
-│   ├── 1_Data_Loading.ipynb             # Load IMPECT data with team-aware zones
-│   ├── 2_Event_Scoring.ipynb            # 3-metric exploratory approach
-│   ├── 3_Role_Specific_Ratings.ipynb    # 8-metric exploratory approach
-│   ├── 4_Market_Value_Analysis.ipynb    # Final 8-metric system with validation
-│   └── 5_Visualizations.ipynb           # Charts and validation plots
-├── LICENSE                               # MIT License
-├── README.md                             # This file
-├── requirements.txt                      # Python dependencies
-└── environment.yml                       # Conda environment specification
+│   ├── 1_Data_Loading.ipynb                       # Load 306 matches, cache events
+│   ├── 2_Event_Scoring.ipynb                      # Exploratory 3-metric approach
+│   ├── 3_Role_Specific_Ratings.ipynb              # Exploratory 8-metric approach
+│   ├── 4.Market Value Analysis.ipynb       # Final pipeline with market values
+│   └── 5.Visualizations.ipynb                       # All figures and validation plots
+├── Dashbboard.py                            # Streamlit dashboard
+├── LICENSE                                         # MIT License
+├── README.md
+├── requirements.txt
+└── environment.yml
 ```
 
 **Note:** Notebooks 2 and 3 contain exploratory analysis of alternative approaches. The final validated system is in Notebook 4.
